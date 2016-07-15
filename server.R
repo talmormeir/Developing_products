@@ -3,10 +3,6 @@ library(ggplot2)
 library(shiny)
 library(rsconnect)
 
-#run these lines to have it upload to  a local machine
-#setwd("C:/Users/i57757/Documents/ROI")
-#runApp(appDir ="my_app", port = 7654, host ="172.18.192.22",display="normal")
-
 
 shinyServer(function(input, output) {
     
