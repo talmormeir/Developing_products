@@ -1,15 +1,7 @@
 #this is the UIscript: controls the layout and appearance of your app. 
-#It is defined in a source script named ui.R. 
-### To get around Verisk's fire wall
-Sys.getenv("http_proxy")
-Sys.setenv(http_proxy="http://i57757:Verisk17@proxy.iso.com:8080")
-setInternet2(use = TRUE)
-
-
 
 library(shiny)
 library(shinythemes)
-
 
 fluidPage(
     
