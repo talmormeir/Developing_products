@@ -18,6 +18,7 @@ __Side bar:__
 __Main Panel:__
 
   1. ROI 
+  
    __ROI=((Gain-Cost))/Cost__
 
    __ROI= (Capture Gain+Reduced Defection Rate-Technology-Discounts)/((Technology+Disscounts))__
