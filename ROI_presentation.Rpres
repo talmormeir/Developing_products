@@ -1,0 +1,59 @@
+Usage Based Insurance - ROI
+========================================================
+author: Talmor Meir
+date: July 2016
+font-import: http://fonts.googleapis.com/css?family=Risque
+font-family: 'Risque'
+width: 1500
+height: 1500
+
+Introduction
+========================================================
+<small>- For decades, insurance companies have managed their driver insurance book using proxies such as profession, gender, age, and marital status. Groups of drivers who presented varying degrees of risk were bundled together to spread an insurer's risk.</small>
+
+<small>- In recent years the rapid evolution of mobile communications, vehicle monitoring systems and location technology has resulted in Usage Based Insurance (UBI) becoming mainstream in many markets. </small>
+
+<small>OUTLINE: </small>
+<small>- Telematics Technology:    Combinijng telecommunication and informatics</small>
+<small>- User Based Insurance:     Insurance pricing based on driving behavior</small>
+<small>- Return on Investment:     A profitability measure</small>
+Telematics
+========================================================
+- Telematics is an emergying market of authomative communications technology that can provide suffiecient data of driving behavior to insurance companies
+
+- Some of the analytic question telematics modeling addresses are: 
+
+    + How detailed and granular is the driver data ?
+    + How will I know the data is accurate?
+    + How will the data be analysed?
+    + How will data be collected?
+
+User Based Insurance Discounts
+========================================================
+<small>Using machine learning algorithms Insurance cariers can predict the risk associate with drivers and offer discounts to preffered drivers</small>
+```{r}
+disscount<-c(25,18,12,7,0)
+pop<-c(0.0351,0.228,0.251,0.139,0.3469)
+DT<-cbind(disscount,pop)
+DT<-as.data.frame(DT)
+for (i in 1:nrow(DT)){DT$popcount[i]<-DT$pop[i]*(1000)}  
+for (i in 1:nrow(DT)){DT$TotalDiscount[i]<-DT$popcount[i]*(DT$disscount[i]/100)*1000}
+```
+```{r,echo=FALSE}
+library(ggplot2)        
+ggplot(DT, aes(x = disscount,y=popcount))+geom_bar(stat="identity",fill="#0066CC",colour="black")+theme_bw()+
+theme(axis.title = element_text(face="bold", size=14),axis.text= element_text(face="bold", size=14))+
+theme(plot.title = element_text(family = "Ariel", color="black", face="bold", size=14))+
+scale_fill_brewer(palette="Set1")+
+ggtitle("Distribution of Discounts")+labs(x="% Discount",  y = "population count")
+```
+```{r}
+DT
+```
+Return On Investment (ROI)
+========================================================
+-A profitability ratio that calculates the profits of an investment as a precentage of the original cost.
+
+Profitability=(Net Profit / Cost of Investment) x 100.
+
+-The GUI created allows companies to easily input their companies financials and investigate if a UBI program is financially feasible. 
